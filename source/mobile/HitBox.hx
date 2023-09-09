@@ -22,14 +22,19 @@ class HitBox extends FlxTypedGroup<FlxButton>
 	public static var RightHB:FlxButton;
 	static var camMobile:FlxCamera;
 	
-    public static var LEFTKEY:FlxInput<FlxKey> = FlxG.keys.getKey(FlxKey.LEFT);
-    public static var DOWNKEY:FlxInput<FlxKey> = FlxG.keys.getKey(FlxKey.DOWN);
-    public static var UPKEY:FlxInput<FlxKey> = FlxG.keys.getKey(FlxKey.UP);
-    public static var RIGHTKEY:FlxInput<FlxKey> = FlxG.keys.getKey(FlxKey.RIGHT);
+    public static var LEFTKEY:FlxInput<FlxKey>;
+    public static var DOWNKEY:FlxInput<FlxKey>;
+    public static var UPKEY:FlxInput<FlxKey>;
+    public static var RIGHTKEY:FlxInput<FlxKey>;
 
 	override public function new()
 	{
         super();
+
+		LEFTKEY = FlxG.keys.getKey(FlxKey.LEFT);
+        DOWNKEY = FlxG.keys.getKey(FlxKey.DOWN);
+        UPKEY = FlxG.keys.getKey(FlxKey.UP);
+        RIGHTKEY = FlxG.keys.getKey(FlxKey.RIGHT);
 		
 		var LeftHB = new FlxButton(0, 0, "");
         LeftHB.makeGraphic(320, 720, FlxColor.PURPLE);
