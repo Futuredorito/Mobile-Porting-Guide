@@ -21,36 +21,26 @@ class HitBox extends FlxTypedGroup<FlxButton>
 	public static var UpHB:FlxButton;
 	public static var RightHB:FlxButton;
 	static var camMobile:FlxCamera;
-	
-    public static var LEFTKEY:FlxInput<FlxKey>;
-    public static var DOWNKEY:FlxInput<FlxKey>;
-    public static var UPKEY:FlxInput<FlxKey>;
-    public static var RIGHTKEY:FlxInput<FlxKey>;
 
 	override public function new()
 	{
         super();
-
-		LEFTKEY = FlxG.keys.getKey(FlxKey.LEFT);
-        DOWNKEY = FlxG.keys.getKey(FlxKey.DOWN);
-        UPKEY = FlxG.keys.getKey(FlxKey.UP);
-        RIGHTKEY = FlxG.keys.getKey(FlxKey.RIGHT);
 		
 		var LeftHB = new FlxButton(0, 0, "");
         LeftHB.makeGraphic(320, 720, FlxColor.PURPLE);
         LeftHB.alpha = 0;
         LeftHB.scrollFactor.set();
         LeftHB.onDown.callback = function() {
-            StartKeyPress(LEFTKEY);
-            LeftHB.alpha = 0.15;
+        	StartKeyPress(FlxG.keys.getKey(FlxKey.LEFT));
+        	LeftHB.alpha = 0.15;
         };
-		LeftHB.onOut.callback = function() {
-            EndKeyPress(LEFTKEY);
-            LeftHB.alpha = 0;
+	LeftHB.onOut.callback = function() {
+		EndKeyPress(FlxG.keys.getKey(FlxKey.LEFT));
+		LeftHB.alpha = 0;
         };
         LeftHB.onUp.callback = function() {
-            EndKeyPress(LEFTKEY);
-            LeftHB.alpha = 0;
+		EndKeyPress(FlxG.keys.getKey(FlxKey.LEFT));
+		LeftHB.alpha = 0;
         };
         add(LeftHB);
 
@@ -60,16 +50,16 @@ class HitBox extends FlxTypedGroup<FlxButton>
         DownHB.scrollFactor.set();
         DownHB.alpha = 0;
         DownHB.onDown.callback = function() {
-            StartKeyPress(DOWNKEY);
-            DownHB.alpha = 0.15;
+		StartKeyPress(FlxG.keys.getKey(FlxKey.DOWN));
+		DownHB.alpha = 0.15;
         };
-		DownHB.onOut.callback = function() {
-            EndKeyPress(DOWNKEY);
-            DownHB.alpha = 0;
+	DownHB.onOut.callback = function() {
+		EndKeyPress(FlxG.keys.getKey(FlxKey.DOWN));
+		DownHB.alpha = 0;
         };
         DownHB.onUp.callback = function() {
-            EndKeyPress(DOWNKEY);
-            DownHB.alpha = 0;
+		EndKeyPress(FlxG.keys.getKey(FlxKey.DOWN));
+		DownHB.alpha = 0;
         };
         add(DownHB);
 
