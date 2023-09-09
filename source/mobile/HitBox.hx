@@ -113,7 +113,7 @@ class HitBox extends FlxTypedGroup<FlxButton>
 
 		camMobile = new FlxCamera();
         camMobile.bgColor.alpha = 0;
-        FlxG.cameras.add(camMobile);
+        FlxG.cameras.add(camMobile, false);
 
         LeftHB.cameras = [camMobile];
         DownHB.cameras = [camMobile];
