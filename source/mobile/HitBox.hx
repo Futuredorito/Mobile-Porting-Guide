@@ -20,6 +20,7 @@ class HitBox extends FlxTypedGroup<FlxButton>
 	public static var DownHB:FlxButton;
 	public static var UpHB:FlxButton;
 	public static var RightHB:FlxButton;
+	static var camMobile:FlxCamera;
 	
     public static var LEFTKEY:FlxInput<FlxKey>;
     public static var DOWNKEY:FlxInput<FlxKey>;
@@ -109,6 +110,15 @@ class HitBox extends FlxTypedGroup<FlxButton>
             RightHB.alpha = 0;
         };
         add(RightHB);
+
+		camMobile = new FlxCamera();
+        camMobile.bgColor.alpha = 0;
+        FlxG.cameras.add(camMobile);
+
+        LeftHB.cameras = [camMobile];
+        DownHB.cameras = [camMobile];
+        UpHB.cameras = [camMobile];
+        RightHB.cameras = [camMobile];
 	}
 	
 	public static function StartKeyPress(val:FlxInput<FlxKey>):Void
