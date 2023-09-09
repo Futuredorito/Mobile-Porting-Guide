@@ -110,11 +110,8 @@ class HitBox extends FlxTypedGroup<FlxButton>
             RightHB.alpha = 0;
         };
         add(RightHB);
-	}
 
-    public static function addCamera()
-    {
-        camMobile = new FlxCamera();
+		camMobile = new FlxCamera();
         camMobile.bgColor.alpha = 0;
         FlxG.cameras.add(camMobile);
 
@@ -122,8 +119,8 @@ class HitBox extends FlxTypedGroup<FlxButton>
         DownHB.cameras = [camMobile];
         UpHB.cameras = [camMobile];
         RightHB.cameras = [camMobile];
-    }
-
+	}
+	
 	public static function StartKeyPress(val:FlxInput<FlxKey>):Void
 		{
 			val.press();
