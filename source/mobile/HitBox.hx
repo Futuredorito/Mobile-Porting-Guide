@@ -16,12 +16,16 @@ import flixel.FlxState;
 @:access(flixel.input.keyboard.FlxKeyboard)
 class HitBox extends FlxTypedGroup<FlxButton>
 {
+	//hitbox buttons
 	public static var LeftHB:FlxButton;
 	public static var DownHB:FlxButton;
 	public static var UpHB:FlxButton;
 	public static var RightHB:FlxButton;
+
+	//camera for hitbox
 	static var camMobile:FlxCamera;
 	
+    //inputs
     public static var LEFTKEY:FlxInput<FlxKey>;
     public static var DOWNKEY:FlxInput<FlxKey>;
     public static var UPKEY:FlxInput<FlxKey>;
@@ -31,11 +35,13 @@ class HitBox extends FlxTypedGroup<FlxButton>
 	{
         super();
 
+		//set inputs 
 		LEFTKEY = FlxG.keys.getKey(FlxKey.LEFT);
         DOWNKEY = FlxG.keys.getKey(FlxKey.DOWN);
         UPKEY = FlxG.keys.getKey(FlxKey.UP);
         RIGHTKEY = FlxG.keys.getKey(FlxKey.RIGHT);
 		
+		//add hitboxes
 		var LeftHB = new FlxButton(0, 0, "");
         LeftHB.makeGraphic(320, 720, FlxColor.PURPLE);
         LeftHB.alpha = 0;
@@ -111,6 +117,7 @@ class HitBox extends FlxTypedGroup<FlxButton>
         };
         add(RightHB);
 
+		//add camera stuff
 		camMobile = new FlxCamera();
         camMobile.bgColor.alpha = 0;
         FlxG.cameras.add(camMobile, false);
