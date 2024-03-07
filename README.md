@@ -1,4 +1,6 @@
 # Mobile-Porting-Guide
+don't use this unfinished and kinda broken
+
 how to add the hitbox - go to PlayState.hx and after these lines 
 ```
 // if (SONG.song == 'South')
